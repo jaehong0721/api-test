@@ -9,7 +9,7 @@ const API = {
 
 }
 
-exports.moruApi = function(){
+module.exports = function(){
     let endpoint;
     let auth;
     let contentType;
