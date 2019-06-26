@@ -14,7 +14,7 @@ let auth;
 let contentType;
 let headers;
 
-export default moruApi = {
+const moruApi = {
     setEndpoint: function (addr) {
         endpoint = addr
         return this
@@ -84,3 +84,5 @@ export default moruApi = {
         )
     },
 }
+
+export default moruApi
