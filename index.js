@@ -45,21 +45,15 @@ const moruApi = (function () {
         /**
          * init moruApi
          * 
-         * @param {String} endpoint 
-         * @param {String} contentType 
+         * @param {String} domain endpoint
+         * @param {String} content content type
          */
-        init: function (a, b) {
-            endpoint = a
-            contentType = b
-
-            if (!headers) headers = {}
-            headers['Content-Type'] = contentType
-
-            if (!config) config = {}
-            config.headers = headers
+        init: function (domain, content) {
+            this.setEndpoint(domain)
+            this.setContentType(content)
         },
-        setEndpoint: function (addr) {
-            endpoint = addr
+        setEndpoint: function (domain) {
+            endpoint = domain
             return this
         },
         setAuth: function (token) {
