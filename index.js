@@ -2,9 +2,10 @@ import axios from 'axios';
 
 const API = {
     // IMAGE_CLOUD: 'https://dt7yirqhex1dp.cloudfront.net/image/',
-    LOGIN: 'auth/obtain_token/',
-    VERIFY_TOKEN: 'auth/verify_token/',
-
+    AUTH: {
+        LOGIN: 'auth/obtain_token/',
+        VERIFY_TOKEN: 'auth/verify_token/',
+    },
     VERIFY: {
         verifyStaff: 'api/2/verify/staff/',
         verifyManager: 'api/2/verify/manager/',
