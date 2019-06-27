@@ -48,8 +48,8 @@ const moruApi = (function () {
          * @param {String} contentType 
          */
         init: function (endpoint, contentType) {
-            this.endpoint = endpoint
-            this.contentType = contentType
+            endpoint = endpoint
+            contentType = contentType
 
             if (!headers) headers = {}
             headers['Content-Type'] = contentType
