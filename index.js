@@ -177,15 +177,14 @@ const moruApi = (function () {
         },
         /**
          * 
-         * @param {String} api "brand_lines"
          * @param {Object} data 
          * @param {String} data.country_code
          * @param {Boolean} data.detail use it when fetch detail info (true)
          * @param {Number} data.pk use it when fetch detail info
          */
-        fetchBrandLineDetail: function (api, data) {
+        fetchBrandLineDetail: function (data) {
             return axios.post(
-                endpoint + API.FETCH[api],
+                endpoint + API.FETCH["brand_lines"],
                 data,
                 config,
             )
