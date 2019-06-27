@@ -36,7 +36,7 @@ let endpoint;
 let auth;
 let contentType;
 let headers;
-// let config;
+let config;
 
 const moruApi = {
     setEndpoint: function (addr) {
@@ -47,14 +47,18 @@ const moruApi = {
         auth = `JWT ${token}`
         if (!headers) headers = {}
         headers['Authorization'] = auth
-        // config.headers = headers
+
+        if(!config) config = {}
+        config.headers = headers
         return this
     },
     setContentType: function (type) {
         contentType = type
         if (!headers) headers = {}
         headers['Content-Type'] = contentType
-        // config.headers = headers
+
+        if(!config) config = {}
+        config.headers = headers
         return this
     },
     /**
@@ -68,7 +72,7 @@ const moruApi = {
         return axios.post(
             endpoint + API.AUTH.LOGIN,
             data,
-            { headers },
+            config,
         )
     },
     /**
