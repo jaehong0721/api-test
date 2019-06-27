@@ -31,7 +31,7 @@ const API = {
     MODIFY: {
         cosmetic: "api/2/modify/cosmetics/",
     }
-},
+}
 
 const moruApi = (function () {
     let endpoint;
