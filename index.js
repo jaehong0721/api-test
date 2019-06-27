@@ -117,12 +117,12 @@ const moruApi = (function () {
         /**
          * 
          * @param {String} signedUrl 
-         * @param {File} file 
+         * @param {File} imageFile 
          */
         insertImage2S3(signedUrl, imageFile) {
             let newHeader = {}
             newHeader['Content-Type'] = imageFile.type
-            return axios.put(signedUrl, imageFile, config)
+            return axios.put(signedUrl, imageFile, { headers: newHeader })
         },
         verify(api, data) {
             return axios.post(
