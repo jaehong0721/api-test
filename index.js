@@ -180,7 +180,7 @@ const moruApi = {
      * @param {Boolean} data.detail use it when fetch detail info (true)
      * @param {Number} data.pk use it when fetch detail info
      */
-    fetchBrandLines: function (api, data) {
+    fetchBrandLineDetail: function (api, data) {
         return axios.post(
             endpoint + API.FETCH[api],
             data,
