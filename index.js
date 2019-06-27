@@ -1,5 +1,38 @@
 import axios from 'axios';
 
+const API = {
+    IMAGE_CLOUD: 'https://dwvkajzy3x5eq.cloudfront.net/',
+    AUTH: {
+        login: 'auth/obtain_token/',
+        verifyToken: 'auth/verify_token/',
+    },
+    VERIFY: {
+        verifyStaff: 'api/2/verify/staff/',
+        verifyManager: 'api/2/verify/manager/',
+    },
+    FETCH: {
+        fetchManager: 'api/2/fetch/managers/',
+        cosmeticETC: 'api/2/fetch/cosmetic_etc/',
+        distributor: 'api/2/fetch/cosmetic_etc/',
+        manufacturer: 'api/2/fetch/cosmetic_etc/',
+        import_company: 'api/2/fetch/cosmetic_etc/',
+        country_of_manufacture: 'api/2/fetch/cosmetic_etc/',
+        category_tag: 'api/2/fetch/categories/',
+        ingredients: 'api/2/fetch/ingredients/',
+        keyword: 'api/2/fetch/keywords/',
+        noAdditives: 'api/2/fetch/no_additives/',
+        intensiveCare: 'api/2/fetch/intensive_care/',
+        brand: 'api/2/fetch/brands/',
+        brand_line: 'api/2/fetch/brand_lines/',
+        features: 'api/2/fetch/features/',
+        cosmetic: 'api/2/fetch/upload_cosmetics/',
+        imageUrl: 'api/2/get/image/'
+    },
+    MODIFY: {
+        cosmetic: "api/2/modify/cosmetics/",
+    }
+},
+
 const moruApi = (function () {
     let endpoint;
     let auth;
@@ -8,39 +41,6 @@ const moruApi = (function () {
     let config;
 
     return {
-        API: {
-            IMAGE_CLOUD: 'https://dwvkajzy3x5eq.cloudfront.net/',
-            AUTH: {
-                login: 'auth/obtain_token/',
-                verifyToken: 'auth/verify_token/',
-            },
-            VERIFY: {
-                verifyStaff: 'api/2/verify/staff/',
-                verifyManager: 'api/2/verify/manager/',
-            },
-            FETCH: {
-                fetchManager: 'api/2/fetch/managers/',
-                cosmeticETC: 'api/2/fetch/cosmetic_etc/',
-                distributor: 'api/2/fetch/cosmetic_etc/',
-                manufacturer: 'api/2/fetch/cosmetic_etc/',
-                import_company: 'api/2/fetch/cosmetic_etc/',
-                country_of_manufacture: 'api/2/fetch/cosmetic_etc/',
-                category_tag: 'api/2/fetch/categories/',
-                ingredients: 'api/2/fetch/ingredients/',
-                keyword: 'api/2/fetch/keywords/',
-                noAdditives: 'api/2/fetch/no_additives/',
-                intensiveCare: 'api/2/fetch/intensive_care/',
-                brand: 'api/2/fetch/brands/',
-                brand_line: 'api/2/fetch/brand_lines/',
-                features: 'api/2/fetch/features/',
-                cosmetic: 'api/2/fetch/upload_cosmetics/',
-                imageUrl: 'api/2/get/image/'
-            },
-            MODIFY: {
-                cosmetic: "api/2/modify/cosmetics/",
-            }
-        },
-
         /**
          * init moruApi
          * 
@@ -50,7 +50,7 @@ const moruApi = (function () {
         init: function (endpoint, contentType) {
             this.endpoint = endpoint
             this.contentType = contentType
-            
+
             if (!headers) headers = {}
             headers['Content-Type'] = contentType
 
