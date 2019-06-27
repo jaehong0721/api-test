@@ -183,4 +183,4 @@ export const API = {
         }
     })
 
-export default moruApi()
+export const moruApi = moruApi()
