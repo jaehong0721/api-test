@@ -162,7 +162,7 @@ const moruApi = (function () {
         },
         /**
          * 
-         * @param {String} api "brand_lines"
+         * @param {String} api "brand_line"
          * @param {Object} data 
          * @param {String} data.country_code
          * @param {Object} data.filter
@@ -184,7 +184,7 @@ const moruApi = (function () {
          */
         fetchBrandLineDetail: function (data) {
             return axios.post(
-                endpoint + API.FETCH["brand_lines"],
+                endpoint + API.FETCH["brand_line"],
                 data,
                 config,
             )
