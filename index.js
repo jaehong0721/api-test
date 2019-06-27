@@ -89,7 +89,7 @@ const moruApi = (function () {
          */
         login: function (data) {
             return axios.post(
-                endpoint + API.AUTH.login,
+                endpoint + this.API.AUTH.login,
                 data,
                 config,
             )
